@@ -12,10 +12,10 @@ def product_create(request):
     elif request.method == 'POST':
         # บันทึกข้อมูลเมื่อผู้ใช้กด Submit ส่งฟอร์มเข้ามา
         p = product(
-            name = "Lv",
-            brand = "Gucci-Bag",
-            price = 40000,
-            year = 2020,       
+            name = request.POST.get("name"),
+            brand = request.POST.get('brand'),
+            price = request.POST.get('price'),
+            year = request.POST.get('year')  
         )
         p.save()
         # เมื่อบันทึกเสร็จ สามารถส่งกลับไปหน้าเดิม หรือใช้ redirect ไปหน้า list ก็ได้ครับ
