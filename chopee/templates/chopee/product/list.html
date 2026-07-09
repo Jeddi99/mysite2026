@@ -2,4 +2,15 @@
 
 {% block section %}
 <section> product - list </section>
+<section>
+    <ul>
+        {%for p in object_list %}
+        <li>
+           <span> class = "text-blue-500 mx-8"{{ p.brand }} </span>
+           <span> class = "text-blue-500 mx-8"{{ p.name }} </span>
+           <span> class = "text-blue-500 mx-8"{{ p.price }} </span>
+
+        </li>
+        {%endfor%}
+    <ul>
 {%endblock%}
