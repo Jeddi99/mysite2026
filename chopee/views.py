@@ -11,7 +11,7 @@ def product_create(request):
         
     elif request.method == 'POST':
         # บันทึกข้อมูลเมื่อผู้ใช้กด Submit ส่งฟอร์มเข้ามา
-        p = product(
+        p = Product(
             name = request.POST.get("name"),
             brand = request.POST.get('brand'),
             price = request.POST.get('price'),
