@@ -17,8 +17,7 @@ def product_create(request):
             price = request.POST.get('price'),
             year = request.POST.get('year')  
         )
-        p.save()
-        # เมื่อบันทึกเสร็จ สามารถส่งกลับไปหน้าเดิม หรือใช้ redirect ไปหน้า list ก็ได้ครับ
+        p.save()# เมื่อบันทึกเสร็จ สามารถส่งกลับไปหน้าเดิม หรือใช้ redirect ไปหน้า list ก็ได้ครับ
         return render(request, 'chopee/product/create.html')
 def product_read(request):
     return render(request, 'chopee/product/read.html')
@@ -27,4 +26,6 @@ def product_update(request):
 def product_delete(request):
     return render(request, 'chopee/product/delete.html')
 def product_list(request):
+    context = {}
+    context['object_list']= Product.objects.all()
     return render(request,'chopee/product/list.html')
